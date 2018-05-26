@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+    
+    <span id="lblTeste">119 votes, average: 3,72 out of 5</span>
+    
+</body>
+<script src="js/jquery-2.2.2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var texto = $('#lblTeste').text();        
+        console.log(texto);
+        texto = texto.split(' ');
+        var valor = texto[3]; 
+        var votos = texto[0];
+        console.log(valor); 
+        valor = parseFloat(valor.replace(/,/g, '.'));
+        votos = parseInt(votos.replace(/\D+/g, ''));
+
+        console.log(valor);
+        console.log(votos);
+        
+        //valor...
+    });
+</script>
+</html>

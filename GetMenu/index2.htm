@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+    
+    <div class="col-md-6">
+		<div class="fecharIncio visible-sm visible-xs">
+			<a href="/gourmet/">fechar <img  alt="VOLTAR INICIO"></a>
+		</div>
+		<h2>Linguiça de Pernil com pimenta </h2>
+		<p>Uma linguiça feita com 100% carne de pernil suíno e um saboroso tempero natural de pimenta-calabresa. Experimente essa combinação de sabores da linha Gourmet que recebe apenas especiarias naturais na sua fabricação.</p>
+		<div class="btn-row">
+			<a class="buttonDefault combina videoModal" href="#" data-video="ryYkDkXMOqQ">Com o que combina? </a>
+			<a class="buttonDefault servir videoModal" href="#" data-video="RMpM_R7z9ZA">Como servir?</a>
+		</div>
+		<div class="infoNutricional visible-xs visible-sm">
+			Informação nutricional <i class="fa fa-search-plus pull-right" aria-hidden="true"></i>
+		</div>
+		<a href="#" class="lightbox">
+		<img class="img-responsive product" alt="Linguiça de Pernil com pimenta">
+		</a>
+	</div>
+
+    
+</body>
+<script src="js/jquery-2.2.2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        
+		$('a').click(function(){
+
+			var element = $(this).parent().siblings();
+			var h2 = element[1];
+			console.log(element);
+			console.log(h2);
+			console.log(h2.innerText);
+
+		});
+
+    });
+</script>
+</html>

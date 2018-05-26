@@ -1,0 +1,25 @@
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <title>Aula 15</title>        
+    </head>
+    <body>
+        
+        
+        <div ng-controller="aula15">
+            <button ng-click="carregarLivros()" type="button">Carregar Livros</button>      
+            <button ng-click="salvarLivro()" type="button">Salvar Livro</button>      
+            <button ng-click="getLivro(19)" type="button">Carregar Livro: ID 19</button>      
+        </div>        
+        
+        
+        <!--API-->                
+        <script src="js/angular/angular.min.js"></script>
+        
+        <!--RESOURCE-->
+        <script src="js/angular/angular-resource.min.js"></script>
+        
+        <!--CONTROLLERS-->                
+        <script src="js/aula15.controller.js"></script>
+    </body>
+</html>

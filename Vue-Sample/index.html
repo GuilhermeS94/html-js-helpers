@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue Sample</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+        <div id="meuApp">
+            <h1>Titulo de troca tempo</h1>
+            <span>{{tempo}}</span>
+        </div>
+        <script>
+            var app = new Vue({
+                el: "#meuApp",
+                data:{
+                    tempo: new Date().toLocaleTimeString()
+                },
+                methods:{
+                    atualizar(){
+                        this.tempo = new Date().toLocaleTimeString();
+                    }
+                },
+                created(){
+                    setInterval(this.atualizar, 1000);
+                }
+            });
+        </script>
+    </body>
+</html>

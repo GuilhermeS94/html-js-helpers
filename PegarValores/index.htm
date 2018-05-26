@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+    
+    <span id="lblProductName">Óleo Johnson's Baby 200ml Amêndoas</span>
+    <span id="lblProductName">Óleo Johnson's Baby 200ml Amêndoas</span>
+    <span id="lblProductName">Óleo Johnson's Baby 200ml Amêndoas</span>
+    <span id="lblProductName">Óleo Johnson's Baby 200ml Amêndoas</span>
+    <span id="lblProductName">Óleo Johnson's Baby 200ml Amêndoas</span>
+    <span id="lblProductName">Óleo Johnson's Baby 200ml Amêndoas</span>
+    
+</body>
+<script src="js/jquery-2.2.2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        
+        $.getJSON('Marca.json', function(dados){
+            
+            $.each( data, function( key, val ) {
+                console.log(val);;
+              });            
+        });
+        
+    });
+</script>
+</html>

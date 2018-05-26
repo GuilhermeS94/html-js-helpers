@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Aula 03 - JavaScript</title>
+        <meta charset="utf-8" />
+    </head>
+    <script>
+        var total = 1 + 2;
+        console.info(total);
+        
+        var pessoa = { 
+            nome : "guilherme silva",
+            idade: 21,
+            status: false
+        };
+        
+        console.info(pessoa);
+        
+        var pessoas = Array();
+        pessoas.push(pessoa);
+        pessoas.push(pessoa);
+        pessoas.push(pessoa);
+        pessoas.push(pessoa);
+        pessoas.push(pessoa);
+        
+        console.info(pessoas);
+        
+        if(pessoa.status == true)
+            console.info("O usuário " + pessoa.nome + " está ativo");
+        else
+            console.info("O usuário " + pessoa.nome + " está bloqueado");
+        
+        for(var i=0;i<50;i++){
+            document.write("<p>"+i+"</p>");
+        }
+        
+        //nao existe elemento ainda
+        //document.getElementById("campo").value = total;
+        
+        function loadWindow(){
+            document.getElementById("campo").value = total;
+        }
+    </script>
+    <body onload="loadWindow()">
+        <input type="text" value="" id="campo" />
+    </body>
+</html>

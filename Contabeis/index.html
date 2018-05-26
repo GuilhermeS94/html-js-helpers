@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contábeis</title>
+    <meta charset="utf-8">
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" ng-app="app" ng-controller="contabeisCtrl">
+
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <div class="jarviswidget jarviswidget-color-greenLight" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false">
+
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+                        <h2>Cadastro de Clientes</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            <input type="hidden" name="pEmpresaId" id="pEmpresaId" value="" />
+                            <input type="hidden" name="Id" id="Id" value="" />
+                            <input type="hidden" name="pMes" id="pMes" value="" />
+                            <input type="hidden" name="pAno" id="pAno" value="" />
+                            <input type="hidden" name="Faturar" id="Faturar" value="" />
+                            <input type="hidden" name="pClienteId" id="pClienteId" value="" />
+
+                            <fieldset>
+
+                                <!-- PIT -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="PIT">PIT:</label>
+                                    <div class="col-md-9">
+                                        <input onkeyup="LancamentoMes.BuscarCustoDeRepasse()" type="text" name="PIT" class="form-control" id="PIT" placeholder="PIT"
+                                            value="">
+                                        <span class="help-block">
+                                            Preencher o PIT
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Tipo de Lançamento -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="TipoLancamentoId">Tipo de Lançamento: <span class="text-danger">*</span></label>
+                                    <div class="col-md-9">
+                                        <select ng-model="TipoLancamentoId" name="TipoLancamentoId" class="form-control">
+                                            <option value="0">Selecione alguma coisa</option>
+                                            <option value="1">lançamento 1</option>
+                                            <option value="2">lançamento 2</option>
+                                            <option value="3">lançamento 3</option>
+                                            <option value="4">lançamento 4</option>
+                                        </select>
+                                        <span class="help-block">
+                                            Selecionar um tipo de lançamento
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- FornecedorId -->
+                                <div class="form-group fornecedor-select">
+                                    <label class="control-label col-md-3" for="FornecedorId">Fornecedor: <span class="text-danger">*</span></label>
+                                    <div class="col-md-9">
+                                        <select name="FornecedorId" class="form-control">
+                                            <option value="0">Selecione alguma coisa</option>
+                                            <option value="1">fornecedor 1</option>
+                                            <option value="2">fornecedor 2</option>
+                                            <option value="3">fornecedor 3</option>
+                                            <option value="4">fornecedor 4</option>
+                                        </select>
+                                        <span class="help-block">
+                                            Selecionar um fornecedor
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- FornecedorId -->
+                                <div ng-show="TipoLancamentoId==2" class="form-group fornecedor-select">
+                                    <label class="control-label col-md-3" for="NotaFiscalFornecedor">Num. Nota Fornecedor: <span class="text-danger">*</span></label>
+                                    <div class="col-md-9">
+                                        <input type="text" name="NotaFiscalFornecedor" class="form-control" id="NotaFiscalFornecedor" placeholder="Número da Nota"
+                                            value="" />
+                                        <span class="help-block">
+                                            Preencher o número da nota fiscal do fornecedor
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- Start RepasseId -->
+                                <div ng-show="TipoLancamentoId==3" class="form-group repasse-select">
+                                    <label class="control-label col-md-3" for="RepasseId">Repasse: <span class="text-danger">*</span></label>
+                                    <div class="col-md-9">
+                                        <select id="RepasseId" name="RepasseId" class="form-control repasseId chosen-select" data-rule-required="true" data-msg-required="Campo obrigatório">
+                                            <option value="">Selecione</option>
+                                            <option value="1">repasse 1</option>
+                                            <option value="2">repasse 2</option>
+                                            <option value="3">repasse 3</option>
+                                            <option value="4">repasse 4</option>
+                                        </select>
+                                        <span class="help-block repasse-help">
+                                            Selecione um lançamento do tipo repasse
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- Frim repasse Id -->
+                                <!-- Produto -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="ClienteProdutoId">Produto: <span class="text-danger">*</span></label>
+                                    <div class="col-md-9">
+                                        <select id="ClienteProdutoId" name="ClienteProdutoId" class="form-control repasseId chosen-select" data-rule-required="true" data-msg-required="Campo obrigatório">
+                                            <option value="">Selecione</option>
+                                            <option value="1">produto 1</option>
+                                            <option value="2">produto 2</option>
+                                            <option value="3">produto 3</option>
+                                            <option value="4">produto 4</option>
+                                        </select>
+                                        <span class="help-block">
+                                            Selecionar um produto
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- ClienteEmpresaId -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="ClienteEmpresaId">Empresa Cliente: <span class="text-danger">*</span></label>
+                                    <div class="col-md-9">
+                                        <select id="ClienteEmpresaId" name="ClienteEmpresaId" class="form-control repasseId chosen-select" data-rule-required="true" data-msg-required="Campo obrigatório">
+                                            <option value="">Selecione</option>
+                                            <option value="1">empresa 1</option>
+                                            <option value="2">empresa 2</option>
+                                            <option value="3">empresa 3</option>
+                                            <option value="4">empresa 4</option>
+                                        </select>
+                                        <span class="help-block">
+                                            Selecionar uma empresa
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- ClienteContatoId -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="ClienteContatoId">Contato Cliente: <span class="text-danger">*</span></label>
+                                    <div class="col-md-9">
+                                        <select id="ClienteContatoId" name="ClienteContatoId" class="form-control repasseId chosen-select" data-rule-required="true" data-msg-required="Campo obrigatório">
+                                            <option value="">Selecione</option>
+                                            <option value="1">contato 1</option>
+                                            <option value="2">contato 2</option>
+                                            <option value="3">contato 3</option>
+                                            <option value="4">contato 4</option>
+                                        </select>
+                                        <span class="help-block">
+                                            Selecionar um contato
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- DataDeFaturamento -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="DataDeFaturamento">Data de Faturamento:</label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <input type="text" name="DataDeFaturamento" id="DataDeFaturamento" class="form-control calendario-datepicker" placeholder="Data de faturamento"
+                                                value="">
+                                            <span class="input-group-addon btn-data-faturamento"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                        <span class="help-block">
+                                            Preencher as data do faturamento
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- NotaFiscal -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="NotaFiscal">Número da Nota:</label>
+                                    <div class="col-md-9">
+                                        <input type="text" name="NotaFiscal" class="form-control" id="NotaFiscal" placeholder="Número da Nota" value=""/>
+                                        <span class="help-block">
+                                            Preencher o número da nota fiscal
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Vencimento -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="Vencimento">Vencimento:</label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <input type="text" name="Vencimento" id="Vencimento" class="form-control calendario-datepicker" placeholder="Vencimento"
+                                                value="">
+                                            <span class="input-group-addon btn-vencimento"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                        <span class="help-block">
+                                            Preencher o vencimento
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Faturar -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="actived_value">Faturar:</label>
+                                    <div class="col-md-9">
+                                        <input type="checkbox" id="actived_value" name="actived_value" data-on-color="success">
+                                    </div>
+                                </div>
+
+                                <!-- ValorNota -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 lbl-valor-nota" for="ValorNota">Valor da Nota:</label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-usd"></i>
+                                            </span>
+                                            <input ng-change="cImpostosDiretos()"
+                                            ng-model="ValorNota"
+                                             type="text" name="ValorNota" class="form-control moeda-real"
+                                             id="ValorNota" placeholder="Valor da nota" value="">
+                                        </div>
+                                        <span class="help-block">
+                                            Preencher o valor da nota
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- ImpostosDiretos -->
+                                <div ng-show="TipoLancamentoId==1" class="form-group impostosdiretos-input">
+                                    <label class="control-label col-md-3" for="ImpostosDiretos">Impostos Diretos:</label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-usd"></i>
+                                            </span>
+                                            <input ng-model="ImpostosDiretos" readonly type="text" name="ImpostosDiretos" class="form-control moeda-real" id="ImpostosDiretos" placeholder="Impostos diretos"
+                                                value="">
+                                        </div>
+                                        <span class="help-block">
+                                            Impostos diretos
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- ROL -->
+                                <div ng-show="TipoLancamentoId==1" class="form-group rol-input">
+                                    <label class="control-label col-md-3" for="ROL">Rol:</label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-usd"></i>
+                                            </span>
+                                            <input type="text" readonly ng-model="ROL" name="ROL" class="form-control moeda-real" id="ROL" placeholder="ROL" value="">
+                                        </div>
+                                        <span class="help-block">
+                                            ROL
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Descricao -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="Descricao">Descritivo da Nota:</label>
+                                    <div class="col-md-9">
+                                        <textarea id="Descricao" name="Descricao" class="form-control" rows="5"></textarea>
+                                        <span class="help-block">
+                                            Preencher o descritivo da nota
+                                        </span>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn bg-color-greenLight txt-color-white btn-lg">
+                                    <i class="fa fa-save"></i>
+                                    Salvar
+                                </button>
+                            </div>
+                        </div>
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget -->
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="js/angular/angular.min.js"></script>
+<script src="js/funcoes.js"></script>
+<script type="text/javascript">
+
+</script>
+
+</html>

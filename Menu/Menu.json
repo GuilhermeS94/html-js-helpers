@@ -1,0 +1,14 @@
+{   receitas : 
+    [
+
+        categorias:
+        {
+            "PorCorte" : {sub : {"Frango inteiro","",""}} ,
+            "PorOcasiaõ" : {sub : {"Gourmet","",""}},
+            "PorRefeição" : {sub : {"Café da manhã","",""}},
+            "PorAutoria" : {sub : {"Fátima","",""}},
+            "PorTempo" : {sub : {"Até 30 min","",""}},
+            "PorRendimento" : {sub : {"1","",""}}        
+        }
+    ]
+}

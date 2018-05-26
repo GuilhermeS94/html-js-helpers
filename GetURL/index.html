@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>GEt url</title>
+
+  </head>
+
+  <body>
+    
+	<table class="table table-striped">
+		<tr id="linha1">
+			<td id="cel1">LIN 1 COL 1</td>
+			<td class="dois">LIN 1 COL 2</td>
+		</tr>
+		<tr id="linha2">
+			<td id="cel3">LIN 2 COL 2</td>
+			<td class="dois">LIN 2 COL 2</td>
+		</tr> 
+		<tr id="linha3">
+			<td id="cel5">LIN 3 COL 3</td>
+			<td class="dois">LIN 3 COL 2</td>
+		</tr>
+		<tr id="linha4">
+			<td id="cel7">LIN 4 COL 4</td>
+			<td class="dois">LIN 4 COL 2</td>
+		</tr>
+		<tr id="linha5">
+			<td id="cel9">LIN 5 COL 5</td>
+			<td class="dois">LIN 5 COL 2</td>
+		</tr>
+		<tr>
+			<td id="cel11">LIN 6 COL 6</td>
+			<td class="dois">LIN 6 COL 2</td>
+		</tr>
+	</table>
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<!-- Tutorial FIM -->
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+            var first = getUrlVars()["teste"];
+            var second = getUrlVars()["tt"];
+            var third = getUrlVars()["aa"];
+            var all = getUrlVars();
+            
+            alert(all);
+		});
+        
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                    vars[key] = value;
+                });
+            return vars;
+        }
+    </script>
+  </body>
+</html>

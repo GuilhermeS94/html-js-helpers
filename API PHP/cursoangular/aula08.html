@@ -1,0 +1,83 @@
+<html ng-app="app">
+    <head>
+        <title>Curso AngularJS</title>
+        <meta charset="utf-8">
+        
+        <style>
+            input.ng-invalid.ng-touched {
+                background: red;   
+                color:white;
+            }
+            
+            input.ng-valid.ng-touched {
+                background: green;   
+                color:white;
+            }
+        </style>
+        
+    </head>
+    <body ng-controller="aula08Controller">
+        
+        <form name="frm" novalidate ng-submit="salvarPessoa(pessoa)">
+        
+            <p>
+                Nome: <input type="text" ng-model="pessoa.nome" name="txtNome" required>
+                
+                <div ng-show="frm.$submitted || frm.txtNome.$touched">
+                    <div ng-show="frm.txtNome.$error.required">
+                        O campo nome deve ser preenchido!
+                    </div>
+                </div>
+                
+            </p> 
+            
+            <p>
+                E-mail: <input type="email" ng-model="pessoa.email" name="txtEmail" required>
+                
+                <div ng-show="frm.$submitted || frm.txtEmail.$touched">
+                    <div ng-show="frm.txtEmail.$error.required">
+                        O campo e-mail deve ser preenchido!
+                    </div>
+                    <div ng-show="frm.txtEmail.$error.email">
+                        O campo e-mail deve conter um e-mail!
+                    </div>
+                </div>
+            </p> 
+            
+            <p>
+                Sexo: 
+                <input type="radio" value="m" ng-model="pessoa.sexo"> Masculino
+                <input type="radio" value="f" ng-model="pessoa.sexo"> Feminino
+            </p> 
+            
+            <p>
+                Estado:
+                
+                <select ng-model="pessoa.estado">
+                    <option ng-repeat="estado in estados" value="{{ estado }}" ng-selected="estado==pessoa.estado">{{ estado }}</option>
+                </select>
+            </p>
+            
+            <p>
+                <input type="submit" value="Salvar" ng-disabled="frm.$invalid">
+            </p>
+            
+            
+            
+            <pre>
+                {{ pessoa | json }}
+            </pre>
+            
+            <pre>
+                {{ pessoas | json }}
+            </pre>
+            
+        </form>
+        
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/app.module.js"></script>
+        
+        <!-- controllers -->
+        <script src="js/aula08Controller.js"></script>
+    </body>
+</html>

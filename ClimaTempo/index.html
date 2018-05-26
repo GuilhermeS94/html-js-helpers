@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <title>Clima Tempo</title>
+
+  </head>
+
+  <body>
+      <label id="ret"></label>
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<!-- Tutorial FIM -->
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+            var retorno = '';
+            $.get('http://api.openweathermap.org/data/2.5/forecast/city?id=3448439&units=metric&APPID=0250ac80c67ffd595afba436913d7f7b', function(dados){
+
+                console.log('Tempo: '+dados.list[dados.list.length - 1].weather[0].main);
+                console.log('Desc: '+dados.list[dados.list.length - 1].weather[0].description);
+                console.log('Temperatura: '+dados.list[dados.list.length - 1].main.temp);
+                console.log('Nuvens(%): '+dados.list[dados.list.length - 1].clouds.all);
+                console.log(dados);
+
+            });
+		});
+    </script>
+  </body>
+</html>

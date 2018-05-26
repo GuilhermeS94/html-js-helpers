@@ -1,0 +1,44 @@
+<html>
+<head>
+	<meta charset="utf-8" >
+    <title>TreeTable Project</title>    
+    <link rel="stylesheet" href="css/jquery.treetable.css">
+    <link rel="stylesheet" href="css/jquery.treegrid.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <table border="1" id="tabela" class="tree">
+        <tr class="treegrid-1">
+            <td>Root node</td><td>Additional info</td>
+        </tr>
+        <tr class="treegrid-2 treegrid-parent-1">
+            <td>Node 1-1</td><td>Additional info</td>
+        </tr>
+        <tr class="treegrid-3 treegrid-parent-1">
+            <td>Node 1-2</td><td>Additional info</td>
+        </tr>
+        <tr class="treegrid-4 treegrid-parent-3">
+            <td>
+                <table>
+                    <tr>
+                        <td>Cel 1</td>
+                        <td>Cel 2</td>
+                    </tr>
+                </table>    
+            </td>
+        </tr>
+    </table>	 
+</body>
+
+<!--SCRIPtS-->
+<script src="js/jquery-1.12.2.js"></script>
+<script src="js/jquery.treetable.js"></script>
+<script src="js/jquery.treegrid.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        MAIN.init();
+    });
+</script>
+</html>

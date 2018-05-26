@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+    <iframe src=""></iframe>
+    <button id="imprimir">ImprimE</button>
+</body>
+<script src="js/jquery-2.2.2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        
+        $('#imprimir').click(function(){
+            $('iframe').attr("src", "tabela.html");
+            $('iframe');
+            window.print();
+        });
+        
+    });
+</script>
+</html>

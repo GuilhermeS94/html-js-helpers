@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" >
+</head>
+
+<body>    
+    <img id="imagens" src="img/">
+</body>
+    
+<script type="text/javascript" src="js/jquery-2.2.2.js"></script>
+<script type="text/javascript" src="js/funcoes.js"></script>
+<script type="text/javascript">            
+    $(document).ready(function(){
+        var $img = Troca.GetUrlVars()["urlImg"];
+
+        $("#imagens").attr("src" , "img/" + $img);
+    });
+</script>
+</html>

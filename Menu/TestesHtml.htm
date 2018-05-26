@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+    <label id="Informacao"></label>
+</body>
+<script src="js/jquery-2.2.2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var json = {
+            "receitas" : {
+                "categorias" : {
+                    "PorCorte" : {"Frango inteiro","",""},
+                    "PorOcasiao": {"Gourmet","",""},
+                }
+            }
+        };
+        
+        json["receitas"] = Array(
+            "categorias"
+        );
+        
+        json["receitas"]["categorias"] = Array("PorCorte", "PorOcasiao", "PorRefeicao", "PorAutoria", "PorTempo", "PorRendimento");
+        
+        json["receitas"]["categorias"]["PorCorte"] = Array("Frango inteiro","","");
+        json["receitas"]["categorias"]["PorOcasiao"] = Array("Gourmet","","");
+        json["receitas"]["categorias"]["PorRefeicao"] = Array("Café da manhã","","");
+        json["receitas"]["categorias"]["PorAutoria"] = Array("Fátima","","");
+        json["receitas"]["categorias"]["PorTempo"] = Array("Até 30 min","","");
+        json["receitas"]["categorias"]["PorRendimento"] = Array("1","","");
+        
+        alert(json);
+        
+        var converted = $.parseJSON(json);
+        alert(converted);
+    });
+</script>
+
+</html>

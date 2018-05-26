@@ -1,0 +1,31 @@
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <title>Get Endereço</title>        
+    </head>
+    <body>
+        
+        
+        <div ng-controller="main">
+            
+            <input type="text" ng-model="cep"/>
+            <button ng-click="getAdress()" type="button">
+                Get Add
+            </button>
+            <hr/>
+            
+            <p>
+                {{ dados | json }}
+            </p>
+            
+        </div>        
+        
+        
+        <!--API-->                
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/app.model.js"></script>
+        
+        <!--CONTROLLERS-->                
+        <script src="js/main.controller.js"></script>
+    </body>
+</html>

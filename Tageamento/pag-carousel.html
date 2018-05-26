@@ -1,0 +1,37 @@
+<html>
+<head>
+	<meta charset="utf-8" >
+    <title>Paginação Carousel</title>
+</head>
+
+<body>
+    <div class="owl-pagination" style="height: 100px; width: 3256px; left: 0px; display: block;border: 1px solid black;">
+        <div class="owl-page" style="height: 25px;width: 148px;border: 1px solid red;">
+            <span></span>
+        </div>
+        <div class="owl-page" style="height: 25px;width: 148px;border: 1px solid yellow;">
+            <span></span>
+        </div>
+        <div class="owl-page" style="height: 25px;width: 148px;border: 1px solid gree;">
+            <span></span>
+        </div>
+        <div class="owl-page" style="height: 25px;width: 148px;border: 1px solid blue;">
+            <span></span>
+        </div>
+    </div>        
+</body>
+
+<!--SCRIPtS-->
+<script>
+
+    var caroussel = document.querySelectorAll('.owl-pagination .owl-page');
+    var text = "0";
+    for(var i=0 ;i<caroussel.length; i++){
+        caroussel[i].onclick = function(){
+            //console.log("Click with loop: %s", this.title);
+            alert("1");
+        };
+    }
+
+</script>
+</html>

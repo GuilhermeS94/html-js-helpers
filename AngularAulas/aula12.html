@@ -1,0 +1,77 @@
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <title>Aula 12</title>  
+        <style>
+            
+            [ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak, .x-ng-cloak{
+                display: none!important;
+            }
+            
+            .classNgClass{
+                font-size: 50px;
+                color: red;
+            }
+            
+            img{
+                width: 30vh;
+                height: 20vh;
+            }
+        </style>
+        <!--API-->                
+        <script src="js/angular/angular.min.js"></script>
+    </head>
+    <body>
+        
+        
+        <div ng-controller="Aula12">
+            <h1>ngShow e ngHide</h1>
+            
+            <div ng-show="mostrar">Este bloco é exiido quando mostrar = true</div>
+            <div ng-hide="mostrar">Este bloco é exiido quando mostrar = false</div>
+            <div ng-show="!mostrar">Este bloco é exiido quando mostrar != true</div>
+            
+            <input type="checkbox" ng-model="mostrar" />Selecionado: mostrar = true
+            
+            <h1>Elemento A</h1>
+            <a href="">Abrir nova página</a>
+            
+            <h1>ngBind HTML</h1>
+            {{ variavelHTML }}
+            
+            
+            <p ng-bind-html="variavelHTML"></p>
+            
+            <h1>ngClass</h1>
+            <button type="button" ng-click="minhaClass='classNgClass'">Add Class</button>
+            <button type="button" ng-click="minhaClass=''">Rem Class</button>
+            <div ng-class="minhaClass">C. Lins e G. Silva</div>
+            
+            
+            <h1>ngCloak</h1>
+            <p>Previne que variáveis do tipo {{  }} sejam exibidas no browser</p>
+            <!--class apenas suporte para IE7-->
+            <p ng-cloak class="ng-cloak">{{ variavelCloak }}</p>
+            
+            <h1>ngSrc</h1>
+            <img ng-src="img/{{ foto }}" />
+            <button type="button" ng-click="foto='SwitchOff.jpg'">Foto Switch</button>
+            <button type="button" ng-click="foto='Tiger.jpg'">Foto Tiger</button>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--SANITIZE-->                
+        <script src="js/angular/angular-sanitize.min.js"></script>
+        
+        
+        <!--CONTROLLERS-->                
+        <script src="js/aula12.controller.js"></script>
+    </body>
+</html>

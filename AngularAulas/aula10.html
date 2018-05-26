@@ -1,0 +1,36 @@
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <title>Aula 10</title>        
+    </head>
+    <body>
+        
+        
+        <div ng-controller="Aula10">
+            <h1>Controller da aula X</h1>
+            
+            {{ 'ca l.' | uppercase }}
+            
+            
+            {{ (pessoa | json) | uppercase }}
+            
+            
+            {{ 'Carol L.' | retornaOi }}
+            
+            
+            {{ pessoa.nome | retornaOi }}
+            
+        </div>
+        
+        
+        <!--API-->                
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/app.model.js"></script>
+        
+        <!--FILTER-->                
+        <script src="js/aula10.filter.js"></script>
+        
+        <!--CONTROLLERS-->                
+        <script src="js/aula10.controller.js"></script>
+    </body>
+</html>

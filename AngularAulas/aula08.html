@@ -1,0 +1,64 @@
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <title>Aula 08</title>
+        <style>
+            input.ng-invalid.ng-touched{
+                background: red;
+                color: aliceblue;
+            }
+            input.ng-valid.ng-touched{
+                background: green;
+                color: aliceblue;
+            }
+        </style>
+    </head>
+    <body ng-controller="aula08">
+               
+        <form name="frm" novalidate ng-submit="salvarPessoa(pessoa)">
+            <p>Nome: <input name="txtNome" type="text" ng-model="pessoa.nome" required /></p>
+            <div ng-show="frm.$sumitted || frm.txtNome.$touched">
+                <div ng-show="frm.txtNome.$error.required">
+                    o campo nome deve ser preenchido
+                </div>
+            </div>
+            <p>Email: <input name="txtEmail" type="email" ng-model="pessoa.email" required /></p>
+            <div ng-show="frm.$sumitted || frm.txtEmail.$touched">
+                o campo email deve ser preenchido
+                <div ng-show="frm.txtEmail.$error.email">
+                    Insira um email valido
+                </div>
+            </div>
+            
+            <p>Sexo: 
+                <input type="radio" value="M" ng-model="pessoa.sexo" />Masculino
+                <input type="radio" value="F" ng-model="pessoa.sexo" />Feminino
+            </p>
+            
+            <p>Estado: 
+                <select ng-model="pessoa.estado">
+                    <option ng-repeat="estado in estados" value="{{estado}}" ng-selected="estado == pessoa.estado">{{estado}}</option>
+                </select>
+            </p>
+            
+            <p>
+                <input type="submit" value="Salvar" ng-disabled="frm.$invalid" />
+                <input type="reset" value="Limpar" />
+            </p>            
+            
+            <pre>
+                {{ pessoa | json }}
+            </pre>
+            <pre>
+                {{ pessoas | json }}
+            </pre>
+        </form>   
+        
+        <!--API-->                
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/app.model.js"></script>
+        
+        <!--CONTROLLERS-->        
+        <script src="js/aula08.controller.js"></script>
+    </body>
+</html>

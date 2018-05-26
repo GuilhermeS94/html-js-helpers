@@ -1,0 +1,47 @@
+<html>
+<head>
+	<meta charset="utf-8" >
+    <title>Base Project</title>
+</head>
+
+<body>
+     <form id="formulario" action="some.php">
+         <input type="" name="" value="">
+         <input type="" name="" value="">
+         <input type="" name="" value="">
+
+         <button onclick="Enviar()" type=""></button>
+     </form>   
+</body>
+
+<!--SCRIPtS-->
+<script src="js/jquery-2.2.2.js"></script>
+<script type="text/javascript">
+function Enviar(){
+    $.ajax({
+        method: "POST",
+        url: "some.php",
+        data: JSON.parse($('#formulario'))
+    })
+    .done(function( msg ) {
+        
+        if(msg == "OK")
+            alert(  );
+        else
+            alert(  );
+    });
+}
+$(document).ready(function(){
+    
+    $.ajax({
+        method: "GET",
+        url: "http://192.168.100.27/hpdashes/api/servicedesk"
+    })
+    .done(function( msg ) {
+        console.log(msg);
+    }).fail(function(erro){
+        console.log(erro);
+    });
+});
+</script>
+</html>

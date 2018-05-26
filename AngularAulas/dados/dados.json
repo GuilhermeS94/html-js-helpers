@@ -1,0 +1,26 @@
+[
+    {
+        "nome" : "G. Silva",
+        "idade": 21
+    },
+    {
+        "nome" : "C. Lins",
+        "idade": 19
+    },
+    {
+        "nome" : "C. Lima",
+        "idade": 21
+    },
+    {
+        "nome" : "C. Diniz",
+        "idade": 21
+    },
+    {
+        "nome" : "D. Chaves",
+        "idade": 19
+    },
+    {
+        "nome" : "G. Chaves",
+        "idade": 20
+    }
+]

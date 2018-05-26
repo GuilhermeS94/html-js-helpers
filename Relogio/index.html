@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Relogio com Javascript</title>
+ 
+<script>
+//inicio da função
+function moveRelogio(){
+    momentoAtual = new Date();//pega data
+    hora = momentoAtual.getHours();//pega somente hora
+    minuto = momentoAtual.getMinutes();//pega somente minuto
+    segundo = momentoAtual.getSeconds();//pega somente segundo
+   //a variavel abaixo separa hora:minuto:segundo
+    horaImprimivel = hora + " : " + minuto + " : " + segundo;
+ 
+    //a hora abaixo será mandada para o input text
+    document.getElementById('clock').value = horaImprimivel;
+ 
+    //a função setTimeout faz a repetição da função a cada 1 segundo
+    setTimeout("moveRelogio()",1000)
+}
+</script>
+ 
+</head>
+<body>
+ 
+    <label id="clock"></label>
+ 
+</body>
+</html>

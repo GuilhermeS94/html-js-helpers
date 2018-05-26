@@ -1,0 +1,80 @@
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <title>Aula 17</title>    
+        
+        <style>
+            .esconder{
+                padding: 10px;
+                border: 1px solid black;
+                background: white;
+            }
+            .esconder{
+                -webkit-transition: all linear 1s;
+                -moz-transition: all linear 1s;
+                -o-transition: all linear 1s;
+                transition: all linear 1s;
+            }
+            
+            .esconder.ng-hide{
+                opacity: 0;
+            }
+            
+            .esconder.ng-show{
+                opacity: 1;
+            }
+            
+            .repetir-lista{
+                border: 1px solid black;
+                padding: 10px;
+                margin-bottom: 5px;
+            }
+            
+            /*ng-enter ng-enter-active ng-leave(active) ng-move(active)*/
+            
+            .repetir-lista.ng-enter{
+                -webkit-transition: 2s linear all;
+                -moz-transition: 2s linear all;
+                -o-transition: 2s linear all;
+                transition: 2s linear all;
+                opacity: 0;
+                background: green;                
+            }
+            
+            .repetir-lista.ng-enter-active{
+                opacity: 1;
+                background: white;                
+            }
+            
+        </style>
+    </head>
+    <body>
+        
+        
+        <div ng-controller="aula17" ng-init="mostra=true;itemAdd=0">
+            
+            <input type="checkbox" ng-model="mostra" >            
+            <div class="esconder" ng-show="mostra">DevMidia</div>
+            
+            <hr/>
+            
+            <input type="text" ng-model="itemAdd" >
+            <button type="button" ng-click="adicionaItem()">Add</button>
+            
+            <div class="repetir-lista" ng-repeat="item in itens">
+                {{ item }}
+            </div>
+            
+        </div>        
+        
+        
+        <!--API-->                
+        <script src="js/angular/angular.min.js"></script>
+        
+        <!--ANIMATE-->                
+        <script src="js/angular/angular-animate.min.js"></script>
+        
+        <!--CONTROLLERS-->                
+        <script src="js/aula17.controller.js"></script>
+    </body>
+</html>

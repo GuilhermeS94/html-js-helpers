@@ -1,0 +1,30 @@
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <title>Aula 09</title>        
+    </head>
+    <body>
+        
+        
+        <div ng-controller="aula09">
+            controller I
+            {{ pessoa.nome }} / {{ pessoa.idade }}
+        </div>
+        
+        <div ng-controller="aula09o2">
+            controller II
+            {{ op.nome }} / {{ op.idade }}
+        </div>
+        
+        <!--API-->                
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/app.model.js"></script>
+        
+        <!--SERVICES-->
+        <script src="js/aula09.service.js"></script>
+        <script src="js/aula09.pessoa.factory.js"></script>
+        
+        <!--CONTROLLERS-->                
+        <script src="js/aula09.controller.js"></script>
+    </body>
+</html>

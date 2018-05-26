@@ -1,0 +1,35 @@
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <title>Aula 14</title>        
+    </head>
+    <body>
+        
+        
+        <div ng-controller="aula14">
+              
+            <p ng-repeat="pessoa in dados">
+                {{ pessoa.nome }} / {{ pessoa.idade }}
+            </p>
+            
+            <button ng-click="carregaDados()" type="button">Carregar Dados</button>
+            
+            <hr/>
+            
+            <input type="text" ng-model="cidade"/>
+            <button ng-click="carregaPrevisao()" type="button">
+                Previsão do tempo
+            </button><br/>
+            <img ng-show="icone != ''" ng-src="http://openweathermap.org/img/w/{{icone}}.png" />{{ descricaoTempo }}
+            
+        </div>        
+        
+        
+        <!--API-->                
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/app.model.js"></script>
+        
+        <!--CONTROLLERS-->                
+        <script src="js/aula14.controller.js"></script>
+    </body>
+</html>

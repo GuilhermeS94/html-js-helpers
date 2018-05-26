@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+    <input class="money" type="text" id="grana" />
+</body>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<!--<script src="js/jquery.maskedinput.js"></script>-->
+<script src="js/jquery.mask.js"></script>
+<script type="text/javascript">
+    //$('#grana').mask("##0,00", { reverse: true });
+    //$('#grana').mask("#,##", { reverse: true });
+    $('#grana').mask("##0,00");
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".money").keyup(function (tecla) {
+            var valor = $(this).val().toString().replace(',', '');
+            switch(valor.length)
+            {
+                case 0://
+                    break;
+
+                case 1://#
+                    break;
+
+                case 2://##,
+                    if (tecla.keyCode == 8)
+                        valor = valor.substr(0, 2);
+                    else
+                        valor = valor + ',';
+                    break;
+
+                case 3://###,
+                    if (tecla.keyCode == 8)
+                        valor = valor.substr(0, 1) + ',' + valor.substr(1, 2);
+                    else
+                        valor = valor + ',';
+                    break;
+
+                case 4://##,##
+                    valor = valor.substr(0, 2) + ',' + valor.substr(2, 2);
+                    break;
+
+                case 5://###,##
+                    valor = valor.substr(0, 3) + ',' + valor.substr(3, 2);
+                    break;
+
+            }
+            $(this).val(valor);
+        });
+    });
+
+</script>
+</html>

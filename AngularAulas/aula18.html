@@ -1,0 +1,45 @@
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <title>Aula 18</title>
+    </head>
+    <body>
+        
+        
+        <div ng-controller="aula18">
+            
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+
+            <p>{{ $location.protocol() }}</p>
+            <p>{{ $location.host()}}</p>
+            <p>{{ $location.port()}}</p>
+            <p>{{ $location.path()}}</p>
+            <p>{{ $location.search() | json}}</p>
+            <p>{{ $location.search().id }}</p>
+            <p>{{ $location.hash() }}</p>
+
+
+            <a href="#" ng-click="setaId(10)">Link</a>
+            <a href="#" ng-click="setaId(11)">Link</a>
+            <a href="#" ng-click="setaId(12)">Link</a>
+            <a href="#" ng-click="setaId(13)">Link</a>
+            <a href="#" ng-click="setaId(14)">Link</a>
+            <a href="#" ng-click="setaId(15)">Link</a>
+            <a href="#" ng-click="setaId(16)">Link</a>
+            <a href="#" ng-click="setaId(17)">Link</a>
+            <a href="#" ng-click="setaId(18)">Link</a>
+            
+        </div>        
+        
+        
+        <!--API-->                
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/app.model.js"></script>
+                
+        <!--CONTROLLERS-->                
+        <script src="js/aula18.controller.js"></script>
+    </body>
+</html>
